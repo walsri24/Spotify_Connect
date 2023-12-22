@@ -1,0 +1,21 @@
+{
+  'https://open.spotify.com/track/7JuMBlUywiUQdgjYtpJvsf': 'Independent Women, Pt. 1',
+  'https://open.spotify.com/track/3WkibOpDF7cQ5xntM1epyf': "It Wasn't Me",
+  'https://open.spotify.com/track/3G6hxSp260RzGw4sOiDOQ3': 'Case Of The Ex (Whatcha Gonna Do)',
+  'https://open.spotify.com/track/5r7OLpdw3EScwgYRsvGnqB': 'Florodora: He Loves Me, He Loves Me Not',
+  'https://open.spotify.com/track/0I3q5fE6wg7LIfHGngUTnV': 'Ms. Jackson',
+  'https://open.spotify.com/track/1rj0XawWJNisX7SGYexowJ': 'Gotta Tell You',
+  'https://open.spotify.com/track/76B0QkxrnWI6FpcsgL22vZ': 'The Way You Love Me',
+  'https://open.spotify.com/track/6ZOBP3NvffbU4SZcrnt1k6': 'Kryptonite',
+  'https://open.spotify.com/track/46n2EGFnPC3tzWCN1Aqe26': 'This I Promise You',
+  'https://open.spotify.com/track/2f5N826udWfjT9iomeaBJt': "If You're Gone",
+  'https://open.spotify.com/track/1C2Q3AymKS17bw7T5gfq6p': 'Dance with Me',
+  'https://open.spotify.com/track/0s46SltT4On0Z6kglK1I5c': 'I Just Wanna Love U (Give It 2 Me)',
+  'https://open.spotify.com/track/635PqgECfFbL0MNLogX7Yv': 'Most Girls',
+  'https://open.spotify.com/track/7sOqd1dVmfU5mgqrUtlqc5': 'I Wish',
+  'https://open.spotify.com/track/4bUfMNNmiCmPXVyWzIfKeZ': 'E.I.',
+  'https://open.spotify.com/track/35o9a4iAfLl5jRmqMX9c1D': 'Shape of My Heart',
+  'https://open.spotify.com/track/4xwRtK6tfMp4yZwcDvY0gT': 'Between Me & You',
+  'https://open.spotify.com/track/6naxalmIoLFWR0siv8dnQQ': 'Oops!...I Did It Again',
+  'https://open.spotify.com/track/2RQ3fWFZJJe4G5KkHEACww': 'Pinch Me'
+}
