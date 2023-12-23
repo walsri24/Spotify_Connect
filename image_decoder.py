@@ -3,6 +3,10 @@ import pymongo
 from PIL import Image
 import os
 import io
+from configparser import ConfigParser
+config = ConfigParser()
+config.read('notes/config.ini')
+con_str = config.get('db', 'connection_string')
 
 
 def read_image(path):
@@ -11,8 +15,7 @@ def read_image(path):
         return bytearray(fi.read())
 
 
-client = pymongo.MongoClient(
-    "mongodb+srv://anandprajwal123:praj123@top-songs-on-given-date.deehg5b.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient(con_str)
 
 db = client["Data"]
 collections = db["Details"]

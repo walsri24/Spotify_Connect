@@ -2,6 +2,10 @@ from spotify_connect import song_urls, ask
 import qrcode
 import pymongo
 import gridfs
+from configparser import ConfigParser
+config = ConfigParser()
+config.read('notes/config.ini')
+con_str = config.get('db', 'connection_string')
 
 with open("songs.txt", "w") as f:
     f.write(f"WELCOME TO THE SPOTIFY {ask} PLAYLIST\n")
@@ -14,8 +18,7 @@ with open("songs.txt", "r") as f:
 img = qrcode.make(data)
 img.save('songs_qr.jpg')
 
-client = pymongo.MongoClient(
-    "mongodb+srv://anandprajwal123:praj123@top-songs-on-given-date.deehg5b.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient(con_str)
 
 db = client["Data"]
 collections = db["Details"]
