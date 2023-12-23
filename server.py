@@ -6,7 +6,12 @@ import requests as re
 import qrcode
 import pymongo
 import gridfs
-
+from configparser import ConfigParser
+config = ConfigParser()
+config.read('notes/config.ini')
+sp_token = config.get('spotify', 'client_id')
+sp_secret = config.get('spotify', 'client_secret')
+con_str = config.get('db', 'connection_string')
 app = Flask(__name__)
 NUMBER_OF_SONGS = 10
 
@@ -31,8 +36,8 @@ def get_data_from_html():
         song_names = [song.getText().strip() for song in song_names_spans]
         song_names = song_names[:NUMBER_OF_SONGS]
 
-        spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='35514d70c0c24cf59b6c9f44cb988fee',
-                                                            client_secret='1be99c3df1564884bceb33c8554c42fb',
+        spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=sp_token,
+                                                            client_secret=sp_secret,
                                                             redirect_uri='https://localhost:8000/callback'))
 
         user_id = spotify.current_user()["id"]
