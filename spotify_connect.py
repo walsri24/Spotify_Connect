@@ -1,8 +1,3 @@
-"""
-set SPOTIPY_CLIENT_ID='35514d70c0c24cf59b6c9f44cb988fee'
-set SPOTIPY_CLIENT_SECRET='96c166d856aa473b92958ee1f62c58b9'
-set SPOTIPY_REDIRECT_URI='https://localhost:8000/callback'
-"""
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
