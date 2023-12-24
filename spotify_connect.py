@@ -1,13 +1,28 @@
+"""
+set SPOTIPY_CLIENT_ID='35514d70c0c24cf59b6c9f44cb988fee'
+set SPOTIPY_CLIENT_SECRET='96c166d856aa473b92958ee1f62c58b9'
+set SPOTIPY_REDIRECT_URI='https://localhost:8000/callback'
+"""
+import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from spotipy.oauth2 import SpotifyClientCredentials
 from bs4 import BeautifulSoup
 import requests
 from configparser import ConfigParser
+
+
 config = ConfigParser()
 config.read('notes/config.ini')
-sp_token = config.get('spotify','client_id')
+sp_token = config.get('spotify', 'client_id')
 sp_secret = config.get('spotify', 'client_secret')
+sp_uri = config.get('spotify', 'redirect_uri')
 # from server import get_data_from_html
+
+os.environ['SPOTIPY_CLIENT_ID'] = sp_token
+os.environ['SPOTIPY_CLIENT_SECRET'] = sp_secret
+os.environ['SPOTIPY_REDIRECT_URI'] = sp_uri
+
 
 ask = input("Enter the date which you want to go to (YYYY-MM-DD):- ")
 # ask = get_data_from_html()
@@ -23,11 +38,16 @@ song_names = song_names[:NUMBER_OF_SONGS]
 # print(song_names)
 # spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
+# Authentication - without user
+# client_credentials_manager = SpotifyClientCredentials(client_id=sp_token, client_secret=sp_secret)
+# spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=sp_token,
                                                     client_secret=sp_secret,
                                                     redirect_uri='https://localhost:8000/callback'))
 
-user_id = spotify.current_user()["id"]
+print(spotify)
+user_id = spotify.me()["id"]
 song_uris = {}
 year = ask.split("-")[0]
 
